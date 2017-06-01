@@ -14,15 +14,23 @@ else
 if(m>n)
 {
 r1=m%n;
+r2=m%r1;
+if(r2==0)
+cout<<"GCD is"<<r1<<endl;
 }
 if(n>m)
 {
 r1=n%m;
+r2=n%r1;
+if(r2==0)
+cout<<"GCD is"<<r1<<endl;
 }
 }
-
+while(r2!=0)
+{
 for(i=0;i<n;i++)
 {
+r3=r1%r2
 
 }
 return 0;
