@@ -1,0 +1,11 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+int m,n,i,r1,r2,r3;
+cout<<"Enter the 2 numbers"<<endl;
+cin>>m>>n;
+
+return 0;
+}
+
