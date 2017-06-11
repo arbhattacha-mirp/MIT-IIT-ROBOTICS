@@ -1,12 +1,21 @@
 void setup() {
   size(displayWidth, displayHeight);
-  resetGame();
-  textFont(createFont("Arial Bold", 50));
+    resetGame();
+   textFont(createFont("Arial Bold", 50));
 }
 
 void draw() {
+  Pause();
+  
+  if(gamestate==true)
   drawGameScreen();
- 
+  if(pause)
+  {textAlign(CENTER);
+    text("PAUSED",displayWidth/2,displayHeight/2);
+  text("Press 's' to resume",displayWidth/2,displayHeight/2+50);
+  text("Press 'r' to reset",displayWidth/2,displayHeight/2+100);
+  }
+ setup();
 }
 
 void drawGameScreen() {
@@ -21,6 +30,8 @@ void drawGameScreen() {
   drawPaddles();
   // Display Scores
   displayScores();
+
+ 
 }
 
 void drawBall() {
@@ -39,8 +50,36 @@ void drawPaddles() {
 }
 
 void resetGame(){
+  
+  if(reset)
+  {
+    ballX=displayWidth/2; 
+    ballY=0;
+    ballVx=BALL_VELOCITY;
+    ballVy=5;
+    leftPaddle=displayHeight/2;
+    rightPaddle=displayHeight/2;
+    leftScore=0; 
+    rightScore=0;
+    gamestate=true;
+    delay(800);
+  }
   // Reset Ball and Paddle Positions
   // Reset Ball Velocity
+}
+void Pause()
+{
+  if(pause)
+  { ballVx=0;
+  ballVy=0;
+  gamestate=false;
+  }
+  if(start)
+  {ballVx=ax;
+  ballVy=ay;
+    gamestate=true;
+  }
+  
 }
 
 void displayScores() {

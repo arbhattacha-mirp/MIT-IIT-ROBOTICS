@@ -14,7 +14,7 @@ void bounceX()
 {
   if(Pballx==radius)
   {
-    if((Pbally<mouseY+sliderHeight)&&(Pbally>mouseY-sliderHeight))
+    if((Pbally<=mouseY+sliderHeight)&&(Pbally>=mouseY))
     Vballx=-Vballx;
   }
   if(Pballx==displayWidth -radius)
